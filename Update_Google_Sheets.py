@@ -4,7 +4,7 @@ from sheet import Sheet
 # 	Required functions here
 # )
 
-# Other required functions here
+# Other required function imports here
 # -------------------------------------------------------------------------------------------------
 
 # Initialize Sheet

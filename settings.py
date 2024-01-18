@@ -4,11 +4,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# API / Secret keys here
+# API / Secret keys here (optional)
 MONKEY_API_KEY = environ.get('MONKEY_API_KEY')
 GHOST_SECRET_KEY = environ.get('GHOST_SECRET_KEY')
 
-# Google service account credentials
+# Google service account credentials path
 GOOGLE_CREDS_PATH = environ.get('GOOGLE_CREDS_PATH')
 
 # Spreadsheet(s)

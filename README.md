@@ -6,7 +6,7 @@ Intro
 After using Excel for so long, I decided to give a web-based solution like Google Sheets a try. I remember classes being one of the harder concepts to learn when I first picked up Python, so I took this chance also to practise it.
 
 The idea is that for each Google spreadsheet, I would initalize a `Sheet` class object from sheet.py with something like this:
-```
+```py
 sheet1 = Sheet(
     GOOGLE_CREDS_PATH, SPREADSHEET_ID, *sheet_tabs
 )
@@ -26,7 +26,7 @@ Getting Started
        - Fill in `SPREADSHEET_ID` with our Google spreadsheet id. This id is a string of characters that can be found at the end of our spreadsheet url link.
        - Fill in `sheet_tabs` with the titles of our spreadsheet tabs.
        - For more spreadsheets, simply repeat the code with different variable names like this:
-         ```
+         ```py
          SPREADSHEET_ID_2 = 'sexy-monkey-xyz-789'
          sheet_tabs_2 = ('tab title 1', 'tab title 2')
          ```
@@ -37,7 +37,7 @@ Getting Started
 5. Set up [Update_Google_Sheets.py](Update_Google_Sheets.py) (main script file)
    - Fill in required functions (more on this later).
    - Initialize all spreadsheets we entered in settings.py by placing the following code on top:
-     ```
+     ```py
      sheet1 = Sheet(GOOGLE_CREDS_PATH, SPREADSHEET_ID, *sheet_tabs)
      sheet2 = Sheet(GOOGLE_CREDS_PATH, SPREADSHEET_ID_2, *sheet_tabs_2)
      # sheet3 = ...
@@ -52,14 +52,14 @@ Methods ([sheet.py](sheet.py))
 While it's possible I add more `Sheet` methods based on my needs along the way, they are pretty basic as of now. Usage is also rather straightforward, although I did have a little trouble initially with the way you needed to format the list brackets when writing values.
 
 Example usage for retrieving values in the 2nd sheet tab and in column A:
-```
+```py
 values = sheet1.get_values(
     sheet_tab=sheet1.tabs[1],
     cells_range='A:A'
 )
 ```
 Example usage for writing values in the 3rd sheet tab on cells B2 to B4:
-```
+```py
 values_to_write = [['value1'], ['value2'], ['value3']]
 sheet1.update_values(
     sheet_tab=sheet1.tabs[2],
@@ -75,7 +75,7 @@ This method calls `get_values()`, applies a specified function on those values, 
 The tl;dr is that if you have a column of say a list of Ethereum addresses on your spreadsheet and you wanted to write their ETH balances on the same row but on a different column (probably an adjacent column), you can do that with just one line of code.
 
 Example usage if Ethereum address list is on column B of the 1st sheet tab and you want to write their values on column C:
-```
+```py
 from jersutils import get_eth_balances
 
 ETHERSCAN_API_KEY = '123abcdef'

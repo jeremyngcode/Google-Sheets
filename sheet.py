@@ -55,6 +55,7 @@ class Sheet:
 
 		if retrieved_values is None:
 			return
+		print()
 
 		values = []
 		for item in item_list:

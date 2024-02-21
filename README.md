@@ -22,28 +22,28 @@ Getting Started
 3. Head to our Google spreadsheet(s) and grant our new bot (service account) the 'Editor' access.
 
 4. Configure [settings.py](settings.py)
-   - **Spreadsheets**
-       - Fill in `SPREADSHEET_ID` with our Google spreadsheet id. This id is a string of characters that can be found at the end of our spreadsheet url link.
-       - Fill in `sheet_tabs` with the titles of our spreadsheet tabs.
-       - For more spreadsheets, simply repeat the code with different variable names like this:
-         ```py
-         SPREADSHEET_ID_2 = 'sexy-monkey-xyz-789'
-         sheet_tabs_2 = ('tab title 1', 'tab title 2')
-         ```
-   - **Creds / Secret keys**
-       - Fill in `GOOGLE_CREDS_PATH` with the path to the JSON file we just downloaded.
-       - Put in any relevant API / Secret keys here (more on this later). I have also provided a .env template file to use with `load_dotenv()`.
+	- **Spreadsheets**
+		- Fill in `SPREADSHEET_ID` with our Google spreadsheet id. This id is a string of characters that can be found at the end of our spreadsheet url link.
+		- Fill in `sheet_tabs` with the titles of our spreadsheet tabs.
+		- For more spreadsheets, simply repeat the code with different variable names like this:
+		  ```py
+		  SPREADSHEET_ID_2 = 'sexy-monkey-xyz-789'
+		  sheet_tabs_2 = ('tab title 1', 'tab title 2')
+		  ```
+	- **Creds / Secret keys**
+		- Fill in `GOOGLE_CREDS_PATH` with the path to the JSON file we just downloaded.
+		- Put in any relevant API / Secret keys here (more on this later). I have also provided a .env template file to use with `load_dotenv()`.
 
 5. Set up [Update_Google_Sheets.py](Update_Google_Sheets.py) (main script file)
-   - Fill in required functions (more on this later).
-   - Initialize all spreadsheets we entered in settings.py by placing the following code on top:
-     ```py
-     sheet1 = Sheet(GOOGLE_CREDS_PATH, SPREADSHEET_ID, *sheet_tabs)
-     sheet2 = Sheet(GOOGLE_CREDS_PATH, SPREADSHEET_ID_2, *sheet_tabs_2)
-     # sheet3 = ...
-     # sheet4 = ...
-     # ...
-     ```
+	- Fill in required functions (more on this later).
+	- Initialize all spreadsheets we entered in settings.py by placing the following code on top:
+	  ```py
+	  sheet1 = Sheet(GOOGLE_CREDS_PATH, SPREADSHEET_ID, *sheet_tabs)
+	  sheet2 = Sheet(GOOGLE_CREDS_PATH, SPREADSHEET_ID_2, *sheet_tabs_2)
+	  # sheet3 = ...
+	  # sheet4 = ...
+	  # ...
+	  ```
 
 6. Begin writing our code!
 

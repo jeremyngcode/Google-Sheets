@@ -61,6 +61,8 @@ class Sheet:
 		for item in item_list:
 			if retrieved_values.get(item):
 				values.append([retrieved_values[item]])
+			elif item:
+				values.append([0])
 			else:
 				values.append([])
 
